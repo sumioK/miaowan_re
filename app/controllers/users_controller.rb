@@ -75,4 +75,7 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find_by(id: @current_user.id)
+    @user.destroy
 end
