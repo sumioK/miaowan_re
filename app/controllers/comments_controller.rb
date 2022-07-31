@@ -10,4 +10,18 @@ class CommentsController < ApplicationController
         redirect_to("/posts/#{params[:post_id]}")
     end
 
+    def edit
+        @comment = Comment.find_by(id: params[:id])
+    end
+
+    def update
+        @comment = Comment.find_by(id: params[:id])
+        @comment.comment = params[:comment]
+        if @comment.save
+            redirect_to("/posts/#{@comment.post_id}")
+        else
+            render("comments/edit")
+        end
+    end
+
 end

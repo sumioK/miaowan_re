@@ -14,7 +14,7 @@
 <% end %>
 
 <% @comments.each do |comment| %>
-    <p><%= comment.user.name %> : <%=comment.comment %></p>
+    <p><%= comment.user.name %> : <%=comment.comment %>  <%= link_to "表示" , "/comments/#{comment.id}/edit" %></p>
 <% end %>
 
 <%= form_tag("/comments/#{@post.id}/create") do %>
