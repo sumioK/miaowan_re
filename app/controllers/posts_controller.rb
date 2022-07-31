@@ -32,6 +32,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id:params[:id])
     @likes_count = Like.where(post_id: @post.id).count
+    @comments = Comment.where(post_id: @post.id).order(created_at: :asc)
   end
 
   def edit

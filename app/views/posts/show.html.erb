@@ -12,5 +12,15 @@
         <p><%= @likes_count %></p>
     <% end %>
 <% end %>
+
+<% @comments.each do |comment| %>
+    <p><%= comment.user.name %> : <%=comment.comment %></p>
+<% end %>
+
+<%= form_tag("/comments/#{@post.id}/create") do %>
+    <input name="comment">
+    <input type="submit" value="コメント">
+<% end %>
+
 <p><%= link_to"編集", "/posts/#{@post.id}/edit"%></p>
 <p><%= link_to"削除", "/posts/#{@post.id}/destroy" ,data: { turbo_method: :post}%></p>
