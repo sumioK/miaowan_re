@@ -1,6 +1,7 @@
-<img src="<%= "/user_images/#{@post.user.profiel_image}"%>">
+<%= link_to image_tag("/user_images/#{@post.user.profiel_image}"),"/users/#{@post.user_id}" %>
 <h2><%= @post.user.name %></h2>
 <img src="<%= "/post_images/#{@post.image}" %> ">
+
 <h4><%= @post.content %></h4>
 
 <% if Like.find_by(user_id: @current_user.id , post_id: @post.id)%>
