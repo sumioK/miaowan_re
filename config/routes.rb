@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'likes/new'
+  post 'likes/:post_id/create' => 'likes#create'
+  post 'likes/:post_id/destroy' => 'likes#destroy'
 
   get '/' => 'homes#top'
   
