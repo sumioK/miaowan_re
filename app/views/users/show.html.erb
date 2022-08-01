@@ -1,7 +1,13 @@
 <img src="<%= "/user_images/#{@user.profiel_image}"%>">
 <h2><%= @user.name %></h2>
 <h4><%= @user.introduction %></h4>
-<p><%= link_to "編集", "/users/#{@user.id}/edit" %></p>
+<% if @user == @current_user %>
+    <p><%= link_to "編集", "/users/#{@user.id}/edit" %></p>
+<% else %>
+    <%= link_to "フォロー",user_relationships_path(@user), data: { turbo_method: :post}%>
+    <%= link_to "フォロー解除",user_relationships_path(@user), data: { turbo_method: :delete}%>
+
+<% end %>
 
 <% @posts.each do |post| %>
     <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>

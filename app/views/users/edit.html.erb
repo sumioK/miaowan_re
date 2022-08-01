@@ -9,6 +9,6 @@
     <input name="introduction" value="<%= @user.introduction %>">
     <input type="submit" value="更新">
 
-    <p><%= link_to "ユーザーの削除", "/users/#{@user.id}/destroy" ,data: { turbo_method: :post} %></p>
+    <p><%= link_to "ユーザーの削除", "/users/#{@user.id}/delete" ,data: { turbo_method: :post} %></p>
 
 <% end %>

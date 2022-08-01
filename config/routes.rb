@@ -28,12 +28,13 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   get 'users/:id/edit' => 'users#edit'
   post 'users/:id/update' => 'users#update'
-  post 'users/:id/destroy' => 'users#destroy'
+  post 'users/:id/delete' => 'users#delete'
+
 
   resources :users do
     resources :relationships, only:[:create, :destroy]
     get :followings, on: :member
     get :followers, on: :member
   end
-  
+
 end
