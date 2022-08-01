@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.order(name: :DESC)
+    @users = User.where.not(id: @current_user).order(name: :DESC)
   end
 
   def edit
@@ -81,4 +81,15 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to ("/")
   end
+
+  def followings
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+  
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
+  end
+
 end

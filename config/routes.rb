@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  get '/' => 'homes#top'
+
   post 'comments/:post_id/create' => 'comments#create'
   post 'comments/:id/update' => 'comments#update'
   post 'comments/:id/destroy' =>'comments#destroy'
@@ -8,8 +9,6 @@ Rails.application.routes.draw do
 
   post 'likes/:post_id/create' => 'likes#create'
   post 'likes/:post_id/destroy' => 'likes#destroy'
-
-  get '/' => 'homes#top'
   
   post 'posts/create' => 'posts#create'
   post 'posts/:id/destroy' => 'posts#destroy'
@@ -30,4 +29,11 @@ Rails.application.routes.draw do
   get 'users/:id/edit' => 'users#edit'
   post 'users/:id/update' => 'users#update'
   post 'users/:id/destroy' => 'users#destroy'
+
+  resources :users do
+    resources :relationships, only:[:create, :destroy]
+    get :followings, on: :member
+    get :followers, on: :member
+  end
+  
 end
