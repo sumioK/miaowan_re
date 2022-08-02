@@ -16,4 +16,7 @@ before_action :set_current_user
         if @current_user
             flash[:notice] = "すでにログインしています"
             redirect_to("/posts/index")
+        end
+    end
+    
 end
