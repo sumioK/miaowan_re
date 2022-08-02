@@ -1,5 +1,8 @@
 <img src="<%= "/user_images/#{@user.profiel_image}"%>">
 <h2><%= @user.name %></h2>
+<% if @user == @current_user %>
+    <p> <%= @user.email %></p>
+<% end %>
 <h4><%= @user.introduction %></h4>
 <p><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー<%=  link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
 <% if @user == @current_user %>
