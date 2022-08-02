@@ -92,4 +92,11 @@ class UsersController < ApplicationController
     @users = user.followers
   end
 
+  def ensure_correct_user
+    if @current_user.id != params[:id]
+      flash[:notice] = "権限がありません"
+      redirect_to("/posts/index")
+    end
+  end
+
 end
