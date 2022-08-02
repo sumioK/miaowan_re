@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_current_user
+  before_action :authenticate_user,{only:[:edit, :update, :index, :show]}
+  before_action :ensure_correct_user,{only:[:edit, :update, :delete]}
+  before_action :forbid_login_user,{only:[:new, :create, :login_form, :login]}
   def new
     @user = User.find_by(id: params[:id])
   end
