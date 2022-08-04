@@ -1,7 +1,3 @@
-<%= form_tag("/posts/index" , method: :get) do %>
-    <input name="serch">
-    <input type="submit" value="検索">
-<% end %>
 <% @posts.each do |post| %>
 <div class="posts">
     <div class="post_user_icon">

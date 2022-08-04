@@ -28,7 +28,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    if params[:serch] == nil || params[:serch] ==""
+      @posts = Post.all.order(created_at: :desc)
+    else
+      @posts = Post.where("content LIKE ?","%#{params[:serch]}%")
+    end
   end
 
   def show
@@ -55,6 +59,8 @@ class PostsController < ApplicationController
       render("posts/edit")
     end
   end
+
+
 
   def destroy
     @post = Post.find_by(id:params[:id])

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get 'posts/new' => 'posts#new'
   get 'posts/index' => 'posts#index'
   get 'posts/:id' => 'posts#show'
+  get 'posts/serch' => 'posts#serch'
 
   get 'login' => 'users#login_form'
   post 'login' => 'users#login'
