@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @posts = Post.where(user_id: @user.id)
+    @likes = Like.where(user_id: @user.id)
   end
 
   def login_form
@@ -59,6 +60,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by(id: params[:id])
   end
+
   def update
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
