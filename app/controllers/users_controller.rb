@@ -14,13 +14,13 @@ class UsersController < ApplicationController
       password: params[:password],
       profiel_image: "default_user.jpg"
     )
-    if @user.save
-      session[:user_id] = @user.id
-      flash[:notice] ="Success sign up!"
-      redirect_to("/posts/index")
-    else
-      render("users/new")
-    end
+      if params[:password] == params[:password2] && @user.save
+        session[:user_id] = @user.id
+        flash[:notice] ="Success sign up!"
+        redirect_to("/posts/index")
+      else
+        render("users/new")
+      end
   end
   
   def show
@@ -98,9 +98,10 @@ class UsersController < ApplicationController
   end
 
   def ensure_correct_user
-    if @current_user.id != params[:id]
+    @user = User.find(params[:id])
+    if @current_user != @user
       flash[:notice] = "権限がありません"
-      redirect_to("/posts/index")
+      redirect_to request.referrer || "/posts/index"
     end
   end
 

@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+validates :introduction, length: {maximum: 250}
+
     has_many :posts, dependent: :destroy
     has_many :likes, dependent: :destroy
     has_many :comments, dependent: :destroy
