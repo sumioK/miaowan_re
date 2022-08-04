@@ -54,7 +54,12 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where.not(id: @current_user).order(name: :DESC)
+    if params[:serch] == nil || params[:serch] == ""
+      @users = User.where.not(id: @current_user).order(name: :DESC)
+    else
+      @users = User.where("name LIKE ?" , "%#{params[:serch]}%")
+    end
+  
   end
 
   def edit

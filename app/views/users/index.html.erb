@@ -1,3 +1,7 @@
+<%= form_tag("/users/index" , method: :get) do %>
+    <input name="serch">
+    <input type="submit" value="検索">
+<% end %>
 <% @users.each do |user| %>
     <div class="profiel">
         <div class="profiel_img">
