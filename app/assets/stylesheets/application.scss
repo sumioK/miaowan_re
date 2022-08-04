@@ -1,9 +1,14 @@
 
 body{
     margin: 0;
+    padding-top: 76px;
     header{
+        width: 100%;
         display: flex;
         background-color: rgb(204, 204, 204);
+        position:fixed;
+        top: 0;
+        left:0;
         h2{
             a{
                 text-decoration: none;
