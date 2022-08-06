@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    if params[:serch] == nil || params[:serch] ==""
+    if !params[:serch] || params[:serch] == ""
       @posts = Post.all.order(created_at: :desc)
     else
       @posts = Post.where("content LIKE ?","%#{params[:serch]}%")
