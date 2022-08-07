@@ -2,27 +2,38 @@
     <img src="<%= "/user_images/#{@user.profiel_image}"%>">
     <p><%= @user.name %></p>
 </div>
-<% if @user == @current_user %>
-    <p> <%= @user.email %></p>
-<% end %>
-<h4><%= @user.introduction %></h4>
-<p><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー<%=  link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
+<%= "投稿#{@posts.length}件" %>
+<%= link_to "フォロー#{@user.followings.count}人", followings_user_path(@user) %>
+<%=  link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
+
+<p><%= @user.introduction %></p>
 
 <% if @user == @current_user %>
     <p><%= link_to "編集", "/users/#{@user.id}/edit" %></p>
     <p><%= link_to"Logout" , "/logout" , data: { turbo_method: :post }%></p>
-<% else %>
+<% end %>
+<% if @user != @current_user %>
     <% if @user.is_followed_by?(@current_user) %>
         <%= link_to "フォロー解除",user_relationship_path(@user), data: { turbo_method: :delete}%>
     <% else %>
         <%= link_to "フォロー",user_relationships_path(@user), data: { turbo_method: :post}%>
     <% end %>
 <% end %>
-<h2>Posts</h2>
-<% @posts.each do |post| %>
-    <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
-<% end %>
-<h2>Likes</h2>
-<% @likes.each do |like|%>
-    <%= link_to image_tag("/post_images/#{like.post_id}.jpg") , "/posts/#{like.post_id}"%>
-<% end %>
+
+<h2 class="show-posts-title">Posts</h2>
+<div class="show-posts">
+    <% @posts.each do |post| %>
+        <div class="show-post-body">
+            <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
+        </div>
+    <% end %>
+</div>
+
+<h2 class="show-posts-title">Likes</h2>
+<div class="show-posts">
+    <% @likes.each do |like|%>
+        <div class="show-post-body">
+            <%= link_to image_tag("/post_images/#{like.post_id}.jpg") , "/posts/#{like.post_id}"%>
+        </div>
+    <% end %>
+</div>

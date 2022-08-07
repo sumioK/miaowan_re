@@ -15,7 +15,7 @@ body{
         .header-container{
             margin:0 auto ;
             text-align: center;
-            width: 450px;
+            width: 700px;
             display: flex;
             .header-logo{
                 h2{
@@ -28,7 +28,7 @@ body{
                     }
             }
             .header-icons{
-                
+                margin-left: 100px;
                 ul{
                     list-style: none;
                     display: flex;
@@ -39,7 +39,7 @@ body{
                     align-items: center;
                     li{
                         list-style: none;
-                        margin-left: 40px;
+                        margin-left: 60px;
                         a{
                             text-decoration: none;
                             color: black;
@@ -120,22 +120,29 @@ body{
         text-align: left;
         margin-left: 12.5%;
     }
-    // .like{
-    //     margin-left: 25%;
-    //     display: flex;
-    //     a{
-    //         height: 25px;
-    //         img{
-    //             width: 25px;
-    //             height: 25px;
-    //         }
-    //     }
-    //     p{
-    //         margin-top: 0;
-    //         margin-bottom: 0;
-    //     }
-    // }
-    // .comments{
-    //     margin-left: 25%;
-    // }
+    .show-posts-title{
+        margin-left: 12.5%;
+    }
+    .show-posts{
+        width: 75%;
+        text-align: center;
+        margin-left: 12.5%;
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .show-post-body{
+            width:25%;
+            margin-left: 25%;
+
+            img{
+                margin-top: 10px;
+                width: 100%;
+            }
+            p{
+                text-align: left;
+                margin-left: 12.5%;
+            }
+        }
+    }
 }
