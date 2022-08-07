@@ -190,7 +190,10 @@ body{
                 a{
                     width: 30px;
                     height: 30px;
-                    margin-left: 100px;
+                    margin-left: 90px;
+                    &:hover{
+                        opacity: 0.5;
+                    }
                     img{
                         width: 30px;
                     }
@@ -210,6 +213,14 @@ body{
                     &:hover{
                         opacity: 0.5;
                     }
+                }
+            }
+            .follow-unfollow{
+                a{
+                    text-decoration: none;
+                    background-color: black;
+                    color: white;
+                    width: 150px;
                 }
             }
         }

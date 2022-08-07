@@ -7,24 +7,25 @@
             <p class="right-name"><%= @user.name %></p>
             <% if @user == @current_user %>
                 <%= link_to image_tag("setting.png"),"/users/#{@user.id}/edit" %>
+                <%= link_to image_tag("logout.png") , "/logout" , data: { turbo_method: :post }%>
+
             <% end %>
         </div>
         <div class="right-seconds">
             <p class="post-count"><%= "投稿#{@posts.length}件" %></p>
             <%= link_to "フォロー#{@user.followings.count}人", followings_user_path(@user) %>
-            <%=  link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
+            <%= link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
         </div>
         <p><%= @user.introduction %></p>
-            <% if @user == @current_user %>
-                <p><%= link_to"Logout" , "/logout" , data: { turbo_method: :post }%></p>
+        <div class="follow-unfollow">
+            <% if @user != @current_user %>
+                <% if @user.is_followed_by?(@current_user) %>
+                    <%= link_to("フォロー解除",user_relationship_path(@user), data: { turbo_method: :delete}, class: "unfollow-btn") %>
+                <% else %>
+                    <%= link_to("フォロー",user_relationships_path(@user), data: { turbo_method: :post},class: "follow-btn")%>
+                <% end %>
             <% end %>
-        <% if @user != @current_user %>
-            <% if @user.is_followed_by?(@current_user) %>
-                <%= link_to "フォロー解除",user_relationship_path(@user), data: { turbo_method: :delete}%>
-            <% else %>
-                <%= link_to "フォロー",user_relationships_path(@user), data: { turbo_method: :post}%>
-            <% end %>
-        <% end %>
+        </div>
     </div>
 </div>
 <h2 class="show-posts-title">Posts</h2>
