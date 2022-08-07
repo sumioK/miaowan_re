@@ -145,4 +145,28 @@ body{
             }
         }
     }
+    .login-form{
+        background-color: white;
+        width:30%;
+        margin:0 auto;
+        border-radius: 30px;
+        .login-logo{
+            text-align: center;
+            padding-top: 25px;
+            font-size: 30px;
+        }
+        .form-body{
+            width: 100%;
+            .login-input{
+                text-align: center;
+                .form-input{
+                    width: 50%;
+                }
+                .form-submit{
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
 }

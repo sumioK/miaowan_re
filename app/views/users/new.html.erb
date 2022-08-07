@@ -1,14 +1,24 @@
-<h2 class="form-heading">Sign Up</h2>
-<div class="form users-form">
-    <%= form_tag("/signup") do%>
-        <p>user name</p>
-        <input name="name">
-        <p>email</p>
-        <input name="email">
-        <p>password</p>
-        <input name="password" type="password">
-        <p>password再入力</p>
-        <input name="password2" type="password">
-        <input type="submit" value="sign up">
-    <% end%>
+<div class="login-form">
+    <h2 class="login-logo">Signup for Miaowan</h2>
+    <div class="form-body">
+        <% if @error_message %>
+            <div class="error-message">
+                <%= @error_message %>
+            </div>
+        <% end%>
+        <div class="login-input">
+            <%= form_tag("/signup") do%>
+                <p class="form-label">user name</p>
+                <input name="name" class="form-input">
+                <p class="form-label">email</p>
+                <input name="email" class="form-input">
+                <p class="form-label" class="form-input">password</p>
+                <input name="password" type="password" class="form-input">
+                <p class="form-label">password再入力</p>
+                <input name="password2" type="password" class="form-input">
+                <br>
+                <input type="submit" value="sign up" class="form-submit">
+            <% end%>
+        </div>
+    </div>
 </div>
