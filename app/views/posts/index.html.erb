@@ -1,16 +1,17 @@
-<%= form_tag("/posts/index" , method: :get) do %>
-    <input name="serch">
-    <input type="submit" value="検索">
-<% end %>
-<% @posts.each do |post| %>
-<div class="posts">
-    <div class="post_user_icon">
-        <%= link_to image_tag("/user_images/#{post.user.profiel_image}") , "/users/#{post.user.id}" %>
-        <p><%= post.user.name %></p>
-    </div>
-    <div class="post_body">
-        <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
-        <%= post.content%>
-    </div>
+<div class="serch-form">    
+    <%= form_tag("/posts/index" , method: :get) do %>
+        <input name="serch" class="serch-indent">
+        <input type="submit" value="検索">
+    <% end %>
 </div>
-<% end %>
+    <% @posts.each do |post| %>
+        <div class="posts">
+            <div class="icon-and-name">
+                <%= link_to image_tag("/user_images/#{post.user.profiel_image}") , "/users/#{post.user.id}" %>
+                <p><%= post.user.name %></p>
+            </div>
+            <div class="post-body">
+                <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
+            </div>
+        </div>
+    <% end %>

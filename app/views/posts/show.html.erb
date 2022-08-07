@@ -1,29 +1,38 @@
-<%= link_to image_tag("/user_images/#{@post.user.profiel_image}"),"/users/#{@post.user_id}" %>
-<h2><%= @post.user.name %></h2>
-<img src="<%= "/post_images/#{@post.image}" %> ">
-
-<h4><%= @post.content %></h4>
-
-<% if Like.find_by(user_id: @current_user.id , post_id: @post.id)%>
-    <%= link_to image_tag("like.png"),"/likes/#{@post.id}/destroy" ,data: { turbo_method: :post} %>
-    <p><%= @likes_count %></p>
-<% else %>
-    <%= link_to image_tag("unlike.png"),"/likes/#{@post.id}/create", data: { turbo_method: :post} %>
-    <% if @likes_count > 0 %>
+<div class="posts">
+    <div class="icon-and-name">
+        <%= link_to image_tag("/user_images/#{@post.user.profiel_image}"),"/users/#{@post.user_id}" %>
+        <p><%= @post.user.name %></p>
+    </div>
+    <div class="post-body">
+        <img src="<%= "/post_images/#{@post.image}" %> ">
+        <p><%= @post.content%></p>
+    </div>
+    <div class="like">
+    <% if Like.find_by(user_id: @current_user.id , post_id: @post.id)%>
+        <%= link_to image_tag("like.png"),"/likes/#{@post.id}/destroy" ,data: { turbo_method: :post} %>
         <p><%= @likes_count %></p>
+    <% else %>
+        <%= link_to image_tag("unlike.png"),"/likes/#{@post.id}/create", data: { turbo_method: :post} %>
+        <% if @likes_count > 0 %>
+            <p><%= @likes_count %></p>
+        <% end %>
     <% end %>
-<% end %>
+    </div>
 
-<% @comments.each do |comment| %>
-    <p><%= comment.user.name %> : <%=comment.comment %>  <%= link_to "表示" , "/comments/#{comment.id}/edit" %> <%= link_to "削除" , "/comments/#{comment.id}/destroy",data: { turbo_method: :post}  %></p>
-<% end %>
+    <div class="comments">
+        <% @comments.each do |comment| %>
+            <p><%= comment.user.name %> : <%=comment.comment %>  <%= link_to "表示" , "/comments/#{comment.id}/edit" %> <%= link_to "削除" , "/comments/#{comment.id}/destroy",data: { turbo_method: :post}  %></p>
+        <% end %>
 
-<%= form_tag("/comments/#{@post.id}/create") do %>
-    <input name="comment">
-    <input type="submit" value="コメント">
-<% end %>
+        <%= form_tag("/comments/#{@post.id}/create") do %>
+            <input name="comment">
+            <input type="submit" value="コメント">
+        <% end %>
 
-<% if @post.user_id == @current_user.id %>
-    <p><%= link_to"編集", "/posts/#{@post.id}/edit"%></p>
-    <p><%= link_to"削除", "/posts/#{@post.id}/destroy" ,data: { turbo_method: :post}%></p>
-<% end %>
+        <% if @post.user_id == @current_user.id %>
+            <p><%= link_to"編集", "/posts/#{@post.id}/edit"%></p>
+            <p><%= link_to"削除", "/posts/#{@post.id}/destroy" ,data: { turbo_method: :post}%></p>
+        <% end %>
+    </div>
+</div>
+

@@ -1,5 +1,7 @@
-<img src="<%= "/user_images/#{@user.profiel_image}"%>">
-<h2><%= @user.name %></h2>
+<div class="icon-and-name">
+    <img src="<%= "/user_images/#{@user.profiel_image}"%>">
+    <p><%= @user.name %></p>
+</div>
 <% if @user == @current_user %>
     <p> <%= @user.email %></p>
 <% end %>

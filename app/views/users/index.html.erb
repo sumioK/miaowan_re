@@ -1,14 +1,14 @@
-<%= form_tag("/users/index" , method: :get) do %>
-    <input name="serch">
-    <input type="submit" value="検索">
-<% end %>
+<div class="serch-form">
+    <%= form_tag("/users/index" , method: :get) do %>
+        <input name="serch" class="serch-indent">
+        <input type="submit" value="検索">
+    <% end %>
+</div>
 <% @users.each do |user| %>
     <div class="profiel">
-        <div class="profiel_img">
+        <div class="icon-and-name">
             <%= link_to image_tag("/user_images/#{user.profiel_image}") , "/users/#{user.id}" %>
-        </div>
-        <div class="profiel_name">
-            <%= user.name %>
+            <p><%= user.name %></p>
         </div>
     </div>
 
