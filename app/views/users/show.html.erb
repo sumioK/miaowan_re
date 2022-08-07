@@ -1,25 +1,32 @@
-<div class="icon-and-name">
-    <img src="<%= "/user_images/#{@user.profiel_image}"%>">
-    <p><%= @user.name %></p>
+<div class="show-profiel">
+    <div class="show-profiel-image">
+        <img src="<%= "/user_images/#{@user.profiel_image}"%>">
+    </div>
+    <div class="show-profiel-right">
+        <div class="right-name-and-edit">
+            <p class="right-name"><%= @user.name %></p>
+            <% if @user == @current_user %>
+                <%= link_to image_tag("setting.png"),"/users/#{@user.id}/edit" %>
+            <% end %>
+        </div>
+        <div class="right-seconds">
+            <p class="post-count"><%= "投稿#{@posts.length}件" %></p>
+            <%= link_to "フォロー#{@user.followings.count}人", followings_user_path(@user) %>
+            <%=  link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
+        </div>
+        <p><%= @user.introduction %></p>
+            <% if @user == @current_user %>
+                <p><%= link_to"Logout" , "/logout" , data: { turbo_method: :post }%></p>
+            <% end %>
+        <% if @user != @current_user %>
+            <% if @user.is_followed_by?(@current_user) %>
+                <%= link_to "フォロー解除",user_relationship_path(@user), data: { turbo_method: :delete}%>
+            <% else %>
+                <%= link_to "フォロー",user_relationships_path(@user), data: { turbo_method: :post}%>
+            <% end %>
+        <% end %>
+    </div>
 </div>
-<%= "投稿#{@posts.length}件" %>
-<%= link_to "フォロー#{@user.followings.count}人", followings_user_path(@user) %>
-<%=  link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
-
-<p><%= @user.introduction %></p>
-
-<% if @user == @current_user %>
-    <p><%= link_to "編集", "/users/#{@user.id}/edit" %></p>
-    <p><%= link_to"Logout" , "/logout" , data: { turbo_method: :post }%></p>
-<% end %>
-<% if @user != @current_user %>
-    <% if @user.is_followed_by?(@current_user) %>
-        <%= link_to "フォロー解除",user_relationship_path(@user), data: { turbo_method: :delete}%>
-    <% else %>
-        <%= link_to "フォロー",user_relationships_path(@user), data: { turbo_method: :post}%>
-    <% end %>
-<% end %>
-
 <h2 class="show-posts-title">Posts</h2>
 <div class="show-posts">
     <% @posts.each do |post| %>
