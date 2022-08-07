@@ -8,27 +8,35 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
     <header>
-      <% if @current_user %>
-        <h2><%= link_to "MiaoWan" , "/posts/index" %></h2>
-      <% else %>
-        <h2><%= link_to "MiaoWan" , "/" %></h2>
-      <% end %>
-      <ul class='heaer_nav'>
-        <li><%= link_to "投稿一覧" , "/posts/index" %></li>
-      <% if @current_user %>
-        <li><%= link_to "投稿" , "/posts/new" %></li>
-        <li><%= link_to "ユーザー一覧" , "/users/index" %></li>
-        <li><%= link_to"Logout" , "/logout" , data: { turbo_method: :post }%></li>
-        <li><%= link_to"こんにちは#{@current_user.name}さん" , "/users/#{@current_user.id}" %></li>
-      <% else%>
-        <li><%= link_to "新規登録" , "/signup" %></li>
-        <li><%= link_to "ログイン" , "/login" %></li>
-      <% end%>
-      </ul>
+      <div class="header-container">
+        <div class="header-logo">
+            <% if @current_user %>
+              <h2><%= link_to "MiaoWan" , "/posts/index" %></h2>
+            <% else %>
+              <h2><%= link_to "MiaoWan" , "/" %></h2>
+            <% end %>
+        </div>
+        <div class="header-icons">
+          <ul class='heaer_nav'>
+
+            <li><%= link_to image_tag("posts.png"),"/posts/index"%></li>
+          <% if !@current_user %>
+            <li><%= link_to image_tag("signup.png"),"/signup"%></li>
+            <li><%= link_to image_tag("enter.png"),"/login"%></li>
+          <% else%>
+            <li><%= link_to image_tag("dog&cat.png"),"/users/index"%></li>
+            <li><%= link_to image_tag("/user_images/#{@current_user.profiel_image}") , "/users/#{@current_user.id}" %></li>
+            <li><%= link_to image_tag("post.png") , "/posts/new" %></li>
+          <% end%>
+          </ul>
+        </div>
+      </div>
     </header>
     <% if flash[:notice]%>
       <div class="flash">

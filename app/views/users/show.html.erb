@@ -8,6 +8,7 @@
 
 <% if @user == @current_user %>
     <p><%= link_to "編集", "/users/#{@user.id}/edit" %></p>
+    <p><%= link_to"Logout" , "/logout" , data: { turbo_method: :post }%></p>
 <% else %>
     <% if @user.is_followed_by?(@current_user) %>
         <%= link_to "フォロー解除",user_relationship_path(@user), data: { turbo_method: :delete}%>
