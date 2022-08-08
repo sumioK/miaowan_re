@@ -17,15 +17,16 @@
             <%= link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
         </div>
         <p><%= @user.introduction %></p>
-        <div class="follow-unfollow">
-            <% if @user != @current_user %>
+        
+        <% if @user != @current_user %>
+            <div class="follow-unfollow">
                 <% if @user.is_followed_by?(@current_user) %>
                     <%= link_to("フォロー解除",user_relationship_path(@user), data: { turbo_method: :delete}, class: "unfollow-btn") %>
                 <% else %>
                     <%= link_to("フォロー",user_relationships_path(@user), data: { turbo_method: :post},class: "follow-btn")%>
                 <% end %>
-            <% end %>
-        </div>
+            </div>
+        <% end %>
     </div>
 </div>
 <h2 class="show-posts-title">Posts</h2>
