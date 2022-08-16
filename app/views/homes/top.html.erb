@@ -3,12 +3,17 @@
     <h2 class="home-sen-sub">ペットの写真をみんなに自慢しよう!!</h2>
 </div>
 
-<%= link_to "/login" do %>
-    <P>ログイン</p>
-<% end %>
-<%= link_to "/signup" do %>
-    <P>新規登録</p>
-<% end %>
+<div class="home-login-button">
+    <%= link_to "/login" do %>
+        <P>ログイン</p>
+    <% end %>
+</div>
+<br>
+<div class="home-login-button">
+    <%= link_to "/signup" do %>
+        <P>新規登録</p>
+    <% end %>
+</div>
 <%# <p>jQuery稼働テスト</p>
 <script type="text/javascript">
     $(document).ready(function() {

@@ -60,6 +60,48 @@ body{
     .home-container{
         text-align: center;
     }
+    // .home-login-button{
+    //     width: 130px;
+    //     margin: 0 auto;
+    //     font-size: 25px;
+    //     background-color: yellow;
+    //     border-radius: 30%;
+    //     a{
+    //         text-decoration: none;
+    //     }
+    // }
+    .home-login-button a {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 240px;
+        padding: 10px 25px;
+        color: #313131;
+        transition: 0.3s ease-in-out;
+        font-weight: 600;
+        background: rgb(255, 255, 255);
+        overflow:hidden;
+    }
+    .home-login-button a:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150%;
+        height: 500%;
+        content: "";
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        transform: translateX(-98%) translateY(-25%) rotate(45deg);
+        background: #6bb6ff;
+        opacity: 0.2;
+    }
+    .home-login-button a:hover:before {
+        -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+        transform: translateX(-9%) translateY(-25%) rotate(45deg);
+    }
 
 
     .serch-form{
