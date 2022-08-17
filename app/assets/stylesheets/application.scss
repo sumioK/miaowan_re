@@ -1,7 +1,7 @@
 
 body{
     margin: 0;
-    padding-top: 76px;
+    padding-top: 62px;
     background-color: #efefef;
     header{
         width: 100%;
@@ -12,6 +12,7 @@ body{
         top: 0;
         left:0;
         border-bottom: 1px solid black;
+        margin-bottom: 0;
         .header-container{
             margin:0 auto ;
             text-align: center;
@@ -56,6 +57,10 @@ body{
                 }
             }
         }
+    }
+    .flash{
+        background-color: #fabbbb;
+        text-align: center;
     }
     .home-container{
         text-align: center;
