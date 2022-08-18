@@ -174,16 +174,12 @@ body{
     }
     .show-posts{
         width: 75%;
-        text-align: center;
-        margin-left: 12.5%;
-        margin-bottom: 10px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        margin:10px auto;
         .show-post-body{
-            width:25%;
-            margin-left: 25%;
-
+            width:45%;
+            margin-right: 5%;
             img{
                 margin-top: 10px;
                 width: 100%;
