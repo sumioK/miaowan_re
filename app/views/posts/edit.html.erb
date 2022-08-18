@@ -1,3 +1,4 @@
+<h1 class="page-title">投稿編集</h1>
 <%= form_tag("/posts/#{@post.id}/update" , {multipart:true}) do %>
     <p>画像</p>
     <input type="file" name="image">
