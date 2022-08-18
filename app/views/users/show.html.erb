@@ -30,8 +30,11 @@
     </div>
 </div>
 
-<h2 class="show-posts-title">Posts</h2>
-<div class="show-posts">
+<div class="show-titles">
+    <h2 id="show-posts-title" >Posts</h2>
+    <h2 id="show-likes-title">Likes</h2>
+</div>
+<div class="show-posts" id="show-posts">
     <% @posts.each do |post| %>
         <div class="show-post-body">
             <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
@@ -39,8 +42,8 @@
     <% end %>
 </div>
 
-<h2 class="show-posts-title">Likes</h2>
-<div class="show-posts">
+
+<div class="show-posts" id="show-likes">
     <% @likes.each do |like|%>
         <div class="show-post-body">
             <%= link_to image_tag("/post_images/#{like.post_id}.jpg") , "/posts/#{like.post_id}"%>

@@ -169,9 +169,33 @@ body{
         text-align: left;
         margin-left: 12.5%;
     }
-    .show-posts-title{
-        margin-left: 12.5%;
+    .show-titles{
+        display: flex;
+        width: 200px;
+        margin: 0 auto;
+        #show-posts-title{
+            background-color: white;
+            font-weight: 100;
+            margin-right: 20px;
+            border: black solid 1px;
+            padding: 10px;
+            &:hover{
+                opacity: 0.7;
+                cursor: pointer;
+            }
+        }
+        #show-likes-title{
+            background-color: white;
+            font-weight: 100;
+            padding: 10px;
+            border: black solid 1px;
+            &:hover{
+                opacity: 0.7;
+                cursor: pointer;
+            }
+        }
     }
+
     .show-posts{
         width: 75%;
         display: flex;

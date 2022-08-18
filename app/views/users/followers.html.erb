@@ -1,15 +1,24 @@
-<% @users.each do |user|%>
-    <div class="profiel_img">
-        <%= link_to image_tag("/user_images/#{user.profiel_image}") , "/users/#{user.id}" %>
-    </div>
-    <div class="profiel_name">
-        <%= user.name %>
-    </div>
-    <% if user != @current_user%>
-        <% if user.is_followed_by?(@current_user)%>
-            <%= link_to "フォロー解除",user_relationship_path(user), data: { turbo_method: :delete}%>
-        <% else %>
-            <%= link_to "フォロー",user_relationships_path(user), data: { turbo_method: :post}%>
+<h1 class="page-title">フォロワー一覧</h1>
+<div class="profiel-index">
+    <% @users.each do |user|%>
+        <div class="profiel-card">
+            <div class="profiel-image">
+                <%= link_to image_tag("/user_images/#{user.profiel_image}") , "/users/#{user.id}" %>
+            </div>
+            <div class="profiel-name">
+                <h2><%= user.name %></h2>
+            </div>
+            <div class="profiel-follow">
+                <% if user != @current_user%>
+                    <div class="follow-unfollow">
+                <% if user.is_followed_by?(@current_user)%>
+                    <%= link_to("フォロー解除",user_relationship_path(user), data: { turbo_method: :delete}, class: "unfollow-btn") %>
+                <% else %>
+                    <%= link_to("フォロー",user_relationships_path(user), data: { turbo_method: :post},class: "follow-btn")%>
+                <% end %>
+            </div>
         <% end %>
+            </div>
+        </div>
     <% end %>
-<% end %>
+</div>
