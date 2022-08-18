@@ -4,3 +4,4 @@
     <input name="content" value="<%= @post.content %>">
     <input type="submit" value="更新">
 <% end %>
+<p><%= link_to"削除", "/posts/#{@post.id}/destroy" ,data: { turbo_method: :post, turbo_confirm:"本当に削除しますか？"}%></p>
