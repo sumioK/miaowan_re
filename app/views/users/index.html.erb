@@ -4,12 +4,19 @@
         <input type="submit" value="検索">
     <% end %>
 </div>
-<% @users.each do |user| %>
-    <div class="profiel">
-        <div class="icon-and-name">
-            <%= link_to image_tag("/user_images/#{user.profiel_image}") , "/users/#{user.id}" %>
-            <p><%= user.name %></p>
-        </div>
-    </div>
 
-<% end %>
+<div class="profiel-index">
+    <% @users.each do |user| %>
+        <div class="profiel-card">
+            <div class="profiel-image">
+                <%= link_to image_tag("/user_images/#{user.profiel_image}") , "/users/#{user.id}" %>
+            </div>
+            <div class="profiel-name">
+                <p><%= user.name %></p>
+            </div>
+            <div class="profiel-introduce">
+                <p><%= user.introduction %></p>
+            </div>
+        </div>
+    <% end %>
+</div>
