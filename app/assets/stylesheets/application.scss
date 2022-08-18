@@ -65,6 +65,9 @@ body{
     .no-flash{
         margin-top: 30px;
     }
+    .page-title{
+        
+    }
     .home-container{
         text-align: center;
     }
@@ -282,5 +285,29 @@ body{
             }
         }
     }
-    
+    .profiel-index{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 50px auto;
+        .profiel-card{
+            border: 1px solid black;
+            width: 30%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            .profiel-image{
+                img{
+                    width: 100%;
+                }
+            }
+            .profiel-name{
+                text-align: center;
+                border-top: black 1px solid;
+                border-bottom: black 1px solid
+                ;
+            }
+        }
+    }
 }

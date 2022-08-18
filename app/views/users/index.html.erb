@@ -1,3 +1,4 @@
+<h1 class="page-title">ユーザー一覧</h1>
 <div class="serch-form">
     <%= form_tag("/users/index" , method: :get) do %>
         <input name="serch" class="serch-indent">
@@ -12,7 +13,7 @@
                 <%= link_to image_tag("/user_images/#{user.profiel_image}") , "/users/#{user.id}" %>
             </div>
             <div class="profiel-name">
-                <p><%= user.name %></p>
+                <h2><%= user.name %></h2>
             </div>
             <div class="profiel-introduce">
                 <p><%= user.introduction %></p>
