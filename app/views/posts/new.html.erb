@@ -1,7 +1,13 @@
-<h1 class="page-title">新規投稿</h1>
-<%= form_tag("/posts/create",{multipart:true}) do %>
-    <p>画像</p>
-    <input name="image" type="file">
-    <input name="content">
-    <input type="submit" value="投稿">
-<% end %>
+<div class="post-new">
+    <h1 class="page-title">新規投稿</h1>
+    <div class="post-container">
+        <%= form_tag("/posts/create",{multipart:true}) do %>
+            <p>画像</p>
+            <input name="image" type="file" class="post-picture">
+            <br>
+            <input name="content" class="post-body">
+            <br>
+            <input type="submit" value="投稿" class="post-submit">
+        <% end %>
+    </div>
+</div>
