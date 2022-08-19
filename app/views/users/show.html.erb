@@ -29,24 +29,23 @@
         <% end %>
     </div>
 </div>
-
-<div class="show-titles">
-    <h2 id="show-posts-title" >Posts</h2>
-    <h2 id="show-likes-title">Likes</h2>
-</div>
-<div class="show-posts" id="show-posts">
-    <% @posts.each do |post| %>
-        <div class="show-post-body">
-            <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
-        </div>
-    <% end %>
-</div>
-
-
-<div class="show-posts" id="show-likes">
-    <% @likes.each do |like|%>
-        <div class="show-post-body">
-            <%= link_to image_tag("/post_images/#{like.post_id}.jpg") , "/posts/#{like.post_id}"%>
-        </div>
-    <% end %>
+<div class="tab" id="js-tab">
+    <div class="show-titles">
+        <h2 class="show-tab-title is-active" data-nav="0">Posts</h2>
+        <h2 class="show-tab-title" data-nav="1">Likes</h2>
+    </div>
+    <div class="show-tab-content" data-content="0">
+        <% @posts.each do |post| %>
+            <div class="show-post-body">
+                <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
+            </div>
+        <% end %>
+    </div>
+    <div class="show-tab-content" data-content="1">
+        <% @likes.each do |like|%>
+            <div class="show-post-body">
+                <%= link_to image_tag("/post_images/#{like.post_id}.jpg") , "/posts/#{like.post_id}"%>
+            </div>
+        <% end %>
+    </div>
 </div>
