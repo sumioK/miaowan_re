@@ -240,10 +240,13 @@ body{
                 .form-input{
                     width: 50%;
                     background-color: rgb(219, 216, 216);
+                    height: 25px;
                 }
                 .form-submit{
                     margin-top: 50px;
                     margin-bottom: 50px;
+                    width: 200px;
+                    height: 50px;
                 }
             }
         }
@@ -361,7 +364,47 @@ body{
             }
         }
     }
-
+    .profiel-edit{
+        width:700px;
+        margin: 20px auto;
+        background-color: white;
+        .profiel-container{
+            display: block;
+            p{
+                text-align: center;
+                font-weight: 200;
+            }
+            .user-name{
+                margin-left: 250px;
+            }
+            .user-email{
+                margin-left:250px
+            }
+            .user-picture{
+                margin-left: 220px;
+            }
+            .img-cont{
+                width: 700px;
+                .user-img{
+                    display: block;
+                    width: 200px;
+                    margin:10px auto;
+                }
+            }
+            .user-body{
+                margin-top: 10px;
+                margin-left: 100px;
+                width: 500px;
+                height: 100px;
+            }
+            .user-submit{
+                width: 100px;
+                height: 30px;
+                margin-left: 300px;
+                margin-top: 20px;
+            }
+        }
+    }
     .js-post{
         width:700px;
         height: 400px;

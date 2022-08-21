@@ -1,14 +1,19 @@
-<%= form_tag("/users/#{@user.id}/update" , {multipart:true}) do %> 
-    <p>ユーザー名</p>
-    <input name="name" value="<%= @user.name %>">
-    <p>画像</p>
-    <input name="profiel_image" type="file">
-    <p> メールアドレス</p>
-    <input name="email" value="<%= @user.email %>">
-    <p>プロフィール</p>
-    <input name="introduction" value="<%= @user.introduction %>">
-    <input type="submit" value="更新">
-
-    <p><%= link_to "ユーザーの削除", "/users/#{@user.id}/delete" ,data: { turbo_method: :post, turbo_confirm: "本当に削除しますか？"} %></p>
-
-<% end %>
+<div class="profiel-edit">
+<h1 class="page-title">ユーザー編集</h1>
+    <div class="profiel-container">
+        <%= form_tag("/users/#{@user.id}/update" , {multipart:true}) do %> 
+            <p>ユーザー名</p>
+            <input name="name" value="<%= @user.name %>" class="user-name">
+            <p>画像</p>
+            <input name="profiel_image" type="file" class="user-picture" id="user-img">
+            <div id="edit-image" class="img-cont"><img class="user-img" src="/user_images/<%= @user.profiel_image %>"></div>
+            <p> メールアドレス</p>
+            <input name="email" value="<%= @user.email %>" class="user-email">
+            <p>プロフィール</p>
+            <input name="introduction" value="<%= @user.introduction %>" class="user-body">
+            <br>
+            <input type="submit" value="更新" class="user-submit">
+            <p><%= link_to "ユーザーの削除", "/users/#{@user.id}/delete" ,data: { turbo_method: :post, turbo_confirm: "本当に削除しますか？"} %></p>
+        <% end %>
+    </div>
+</div>
