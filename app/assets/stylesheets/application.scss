@@ -132,13 +132,30 @@ body{
             margin-top: 10px;
         }
     }
-    .posts{
+    .posts-index{
         background-color: white;
-        width: 75%;
+        width: 50%;
         text-align: center;
-        margin-left: 12.5%;
-        margin-bottom: 10px;
-        border-radius: 30px;
+        margin-left: 25%;
+        margin-bottom: 30px;
+        padding: 20px;
+        .post-body{
+            img{
+                margin-top: 10px;
+                width: 75%;
+            }
+            p{
+                text-align: left;
+                margin-left: 12.5%;
+            }
+        }
+    }
+    .posts-show{
+        background-color: white;
+        width: 50%;
+        text-align: center;
+        margin-left: 25%;
+        padding: 20px;
         .post-body{
             img{
                 margin-top: 10px;

@@ -1,4 +1,4 @@
-<div class="posts">
+<div class="posts-show">
     <div class="icon-and-name">
         <%= link_to image_tag("/user_images/#{@post.user.profiel_image}"),"/users/#{@post.user_id}" %>
         <p><%= @post.user.name %></p>
@@ -21,7 +21,7 @@
 
     <div class="comments">
         <% @comments.each do |comment| %>
-            <p><%= comment.user.name %> : <%=comment.comment %>  <%= link_to "表示" , "/comments/#{comment.id}/edit" %> <%= link_to "削除" , "/comments/#{comment.id}/destroy",data: { turbo_method: :post}  %></p>
+            <p><%= comment.user.name %> : <%=comment.comment %>  <%= link_to "削除" , "/comments/#{comment.id}/destroy",data: { turbo_method: :post}  %></p>
         <% end %>
 
         <%= form_tag("/comments/#{@post.id}/create") do %>
@@ -30,7 +30,7 @@
         <% end %>
 
         <% if @post.user_id == @current_user.id %>
-            <p><%= link_to"編集", "/posts/#{@post.id}/edit"%></p>
+            <p><%= link_to "編集", "/posts/#{@post.id}/edit"%></p>
         <% end %>
     </div>
 </div>

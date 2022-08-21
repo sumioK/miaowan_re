@@ -6,7 +6,7 @@
     <% end %>
 </div>
     <% @posts.each do |post| %>
-        <div class="posts">
+        <div class="posts-index">
             <div class="icon-and-name">
                 <%= link_to image_tag("/user_images/#{post.user.profiel_image}") , "/users/#{post.user.id}" %>
                 <p><%= post.user.name %></p>
