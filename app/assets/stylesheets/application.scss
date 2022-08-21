@@ -415,7 +415,8 @@ body{
             #new-image{
                 .new-img{
                     width: 400px;
-                    margin:10px auto
+                    margin-top: 10px;
+                    margin-left: 150px;
                 }
                 .new-img:nth-child(2){
                     display: none;
