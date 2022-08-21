@@ -1,8 +1,14 @@
+<div class="post-new">
 <h1 class="page-title">投稿編集</h1>
-<%= form_tag("/posts/#{@post.id}/update" , {multipart:true}) do %>
-    <p>画像</p>
-    <input type="file" name="image">
-    <input name="content" value="<%= @post.content %>">
-    <input type="submit" value="更新">
-<% end %>
-<p><%= link_to"削除", "/posts/#{@post.id}/destroy" ,data: { turbo_method: :post, turbo_confirm:"本当に削除しますか？"}%></p>
+    <div class="post-container">
+        <%= form_tag("/posts/#{@post.id}/update" , {multipart:true}) do %>
+            <p>画像</p>
+            <input type="file" name="image"  class="post-picture" id="post-img">
+            <div id="new-image"><img class="new-img" src="/post_images/<%= @post.image %>"></div>
+            <input name="content" value="<%= @post.content %>" class="post-body">
+            <br>
+            <input type="submit" value="更新" class="post-submit">
+        <% end %>
+        <p><%= link_to"削除", "/posts/#{@post.id}/destroy" ,data: { turbo_method: :post, turbo_confirm:"本当に削除しますか？"}%></p>
+    </div>    
+</div>
