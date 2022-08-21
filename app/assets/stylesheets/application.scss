@@ -384,9 +384,9 @@ body{
     }
     .post-new{
         width:700px;
-        height: 400px;
+        height: 650px;
         position: absolute;
-        top: 50%;
+        top: 55%;
         left:50%;
         transform: translate(-50%, -50%);
         -webkit-transform: translate(-50%, -50%);
@@ -411,6 +411,15 @@ body{
                 height: 30px;
                 margin-left: 300px;
                 margin-top: 20px;
+            }
+            #new-image{
+                .new-img{
+                    width: 400px;
+                    margin:10px auto
+                }
+                .new-img:nth-child(2){
+                    display: none;
+                }
             }
         }
     }
