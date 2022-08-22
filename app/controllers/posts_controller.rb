@@ -21,8 +21,8 @@ class PostsController < ApplicationController
         render("posts/new")
       end
     else
-      flash[:notice] = "画像が選択されていません"
-      render("posts/new")
+      flash[:alert] = "画像が選択されていません"
+      redirect_to("/posts/new")
     end
 
   end
