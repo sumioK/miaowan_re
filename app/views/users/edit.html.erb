@@ -26,7 +26,6 @@
             <input type="submit" value="更新" class="user-submit">
         </div>
     <% end %>
-
     <div class="delete-btn">
         <p><%= link_to "ユーザーの削除", "/users/#{@user.id}/delete" ,data: { turbo_method: :post, turbo_confirm: "本当に削除しますか？"} , class:"delete-btn"%></p>
     </div>
