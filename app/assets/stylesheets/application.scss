@@ -365,44 +365,59 @@ body{
         }
     }
     .profiel-edit{
-        width:700px;
+        width:900px;
         margin: 20px auto;
         background-color: white;
         .profiel-container{
-            display: block;
-            p{
-                text-align: center;
-                font-weight: 200;
-            }
-            .user-name{
-                margin-left: 250px;
-            }
-            .user-email{
-                margin-left:250px
-            }
-            .user-picture{
-                margin-left: 220px;
-            }
-            .img-cont{
-                width: 700px;
-                .user-img{
-                    display: block;
+            display: flex;
+            .edit-left{
+                p{
                     width: 200px;
-                    margin:10px auto;
+                    text-align: right;
+                }
+                .edit-img-p{
+                    margin-top: 100px;
                 }
             }
-            .user-body{
-                margin-top: 10px;
-                margin-left: 100px;
-                width: 500px;
-                height: 100px;
+            .edit-right{
+                display: block;
+                .user-name{
+                    margin:16px 20px;
+                    height: 18px;
+                    width: 500px;
+                }
+                .user-email{
+                    margin:0px 20px;
+                    height: 18px;
+                    width: 500px;
+                }
+                .user-body{
+                    margin:16px 20px;
+                    height: 100px;
+                    width: 500px;
+                }
+                .user-picture{
+                    margin-left: 20px;
+                }
+                .img-cont{
+                    .user-img{
+                        display: block;
+                        width: 200px;
+                        margin:20px 20px;
+                    }
+                }
             }
+        }
+        .submit-container{  
+            text-align: center;
             .user-submit{
                 width: 100px;
                 height: 30px;
-                margin-left: 300px;
-                margin-top: 20px;
             }
+        }
+        .delete-btn{
+            text-align: center;
+            padding-bottom: 20px;
         }
     }
     .js-post{
