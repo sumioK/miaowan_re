@@ -143,6 +143,7 @@ body{
         margin-left: 25%;
         margin-bottom: 30px;
         padding: 20px;
+        box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
         .post-body{
             img{
                 margin-top: 10px;
@@ -160,6 +161,7 @@ body{
         text-align: center;
         margin-left: 25%;
         padding: 20px;
+        box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
         .post-body{
             img{
                 margin-top: 10px;
@@ -230,8 +232,9 @@ body{
     }
     .login-form{
         background-color: white;
-        width:30%;
+        width:40%;
         margin:100px auto;
+        box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
         .login-logo{
             text-align: center;
             padding-top: 25px;
@@ -369,6 +372,7 @@ body{
         }
     }
     .profiel-edit{
+        box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
         .title-container{
             display: flex;
             justify-content: center;
@@ -487,6 +491,22 @@ body{
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         background-color: white;
+        box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+        .title-container{
+            display: flex;
+            justify-content: center;
+            .page-title{
+                margin-left: 50px;
+            }
+            .delete-btn{
+                margin-top: 30px;
+                margin-left: 10px;
+                height: 40px;
+                img{
+                    height: 40px;
+                }
+            }
+        }
         .post-container{
             display: block;
             p{

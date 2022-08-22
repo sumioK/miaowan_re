@@ -20,7 +20,12 @@
     </div>
     <div class="comments">
         <% @comments.each do |comment| %>
-            <p><%= comment.user.name %> : <%=comment.comment %>  <%= link_to "削除" , "/comments/#{comment.id}/destroy",data: { turbo_method: :post}  %></p>
+            <p>
+                <%= comment.user.name %> : <%=comment.comment %>  
+                <% if comment.user_id == @current_user.id %>
+                    <%= link_to "削除" , "/comments/#{comment.id}/destroy",data: { turbo_method: :post}  %>
+                <% end %>
+            </p>
         <% end %>
         <%= form_tag("/comments/#{@post.id}/create") do %>
             <input name="comment">
