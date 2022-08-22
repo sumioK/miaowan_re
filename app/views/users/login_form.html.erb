@@ -1,5 +1,5 @@
 <div class="login-form">
-    <h2 class="login-logo">Login</h2>
+    <h2 class="login-logo">ログイン</h2>
     <div class="form-body">
         <% if @error_message %>
             <div class="error-message">
@@ -8,12 +8,12 @@
         <% end%>
         <div class="login-input">
             <%= form_tag('/login') do %>
-                <p class="form-label">email</p>
+                <p class="form-label">メールアドレス</p>
                 <input name='email' value="<%= @email %>" class="form-input">
-                <p class="form-label">password</p>  
+                <p class="form-label">パスワード</p>  
                 <input name='password' type='password' value="<%= @password %>" class="form-input">
                 <br>
-                <input type='submit' value="login" class="form-submit">
+                <input type='submit' value="ログイン" class="form-submit">
             <% end%>
         </div>
     </div>
