@@ -1,7 +1,7 @@
 
 body{
     margin: 0;
-    padding-top: 62px;
+    padding-top: 61px;
     background-color: #efefef;
     header{
         width: 100%;
@@ -59,7 +59,11 @@ body{
         }
     }
     .flash{
-        background-color: #fabbbb;
+        background-color: #7afa6e;
+        text-align: center;
+    }
+    .alert{
+        background-color: rgb(255, 66, 66);
         text-align: center;
     }
     .no-flash{

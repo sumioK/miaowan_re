@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     )
       if params[:password] == params[:password2] && @user.save
         session[:user_id] = @user.id
-        flash[:notice] ="Success sign up!"
+        flash[:notice] ="ユーザー登録に成功しました"
         redirect_to("/posts/index")
       else
         render("users/new")
@@ -36,20 +36,26 @@ class UsersController < ApplicationController
     @user = User.find_by(email: params[:email])
     if @user && @user.password == params[:password]
       session[:user_id] = @user.id
-
-      flash[:notice] = "Login success"
+      flash[:notice] = "ログインに成功しました"
       redirect_to("/posts/index")
-    else
-      @error_message = "メールアドレスまたはパスワードが間違っています"
-      @email = params[:email]
-      @password = params[:password]
-      render("login_form")
+    elsif !@user
+      flash[:alert] = "メールアドレスが間違っています"
+      redirect_to("/login")
+    elsif @user.password != params[:password]
+      flash[:alert] = "パスワードが間違っています"
+      redirect_to("/login")
     end
+    # else
+    #   @error_message = "メールアドレスまたはパスワードが間違っています"
+    #   @email = params[:email]
+    #   @password = params[:password]
+    #   render("login_form")
+    # end
   end
 
   def logout
     session[:user_id] = nil
-    flash[:notice] = "Logout success"
+    flash[:notice] = "ログアウトに成功しました"
     redirect_to("/login")
   end
 

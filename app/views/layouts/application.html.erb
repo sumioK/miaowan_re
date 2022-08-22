@@ -40,9 +40,13 @@
         </div>
       </div>
     </header>
-    <% if flash[:notice]%>
+    <% if flash[:notice] %>
       <div class="flash">
-          <%= flash[:notice]%>
+          <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:alert] %>
+      <div class="alert">
+        <%= flash[:alert] %>
       </div>
     <% else %>
       <div class="no-flash">
