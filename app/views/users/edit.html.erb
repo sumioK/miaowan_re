@@ -1,5 +1,8 @@
 <div class="profiel-edit">
-    <h1 class="page-title">ユーザー編集</h1>
+    <div class="title-container">
+        <h1 class="page-title">ユーザー編集</h1>
+        <%= link_to image_tag("trash.png"),"/users/#{@user.id}/delete" ,data: { turbo_method: :post, turbo_confirm: "本当に削除しますか？"} , class:"delete-btn"%>
+    </div>
     <%= form_tag("/users/#{@user.id}/update" , {multipart:true}) do %> 
         <div class="profiel-container">
             <div class="edit-left">
