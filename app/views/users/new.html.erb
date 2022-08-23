@@ -9,12 +9,12 @@
         <div class="login-input">
             <%= form_tag("/signup") do%>
                 <p class="form-label">ユーザー名</p>
-                <input name="name" class="form-input">
+                <input name="name" class="form-input" value="<%= params[:name]%>">
                 <p class="form-label">メールアドレス</p>
-                <input name="email" class="form-input">
+                <input name="email" class="form-input" value="<%= @email %>">
                 <p class="form-label" class="form-input">パスワード</p>
                 <input name="password" type="password" class="form-input">
-                <p class="form-label">パスワード再入力</p>
+                <p class="form-label">パスワード確認</p>
                 <input name="password2" type="password" class="form-input">
                 <br>
                 <input type="submit" value="登録" class="form-submit">

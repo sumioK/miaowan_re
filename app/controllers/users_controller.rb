@@ -18,8 +18,18 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         flash[:notice] ="ユーザー登録に成功しました"
         redirect_to("/posts/index")
-      else
-        render("users/new")
+      elsif params[:name].blank?
+        flash[:alert] = "ユーザー名を登録してください"
+        redirect_to("/signup")
+      elsif params[:email].blank?
+        flash[:alert] = "メールアドレスを登録してください"
+        redirect_to("/signup")
+      elsif params[:password].blank?
+        flash[:alert] = "パスワードを登録してください"
+        redirect_to("/signup")
+      elsif params[:password] != params[:password2]
+        flash[:alert] = "パスワードとパスワード確認が一致しません"
+        redirect_to("/signup")
       end
   end
   
@@ -45,12 +55,7 @@ class UsersController < ApplicationController
       flash[:alert] = "パスワードが間違っています"
       redirect_to("/login")
     end
-    # else
-    #   @error_message = "メールアドレスまたはパスワードが間違っています"
-    #   @email = params[:email]
-    #   @password = params[:password]
-    #   render("login_form")
-    # end
+
   end
 
   def logout

@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 validates :introduction, length: {maximum: 250}
+validates :name, presence: true
+validates :password, presence: true
 
     has_many :posts, dependent: :destroy
     has_many :likes, dependent: :destroy
