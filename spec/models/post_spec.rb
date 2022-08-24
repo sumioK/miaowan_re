@@ -32,4 +32,8 @@ RSpec.describe Post, type: :model do
     )
     expect(post).to be_invalid
   end
+
+  it "if update's image is null image doesn't change"
+
+  it "if update has image , image changes"
 end
