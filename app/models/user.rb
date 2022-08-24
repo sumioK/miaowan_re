@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 validates :introduction, length: {maximum: 250}
 validates :name, presence: true
+validates :email, presence: true ,uniqueness: true, format: {with: /@/,message:"不正なメールアドレスです"}
 validates :password, presence: true
 
     has_many :posts, dependent: :destroy
