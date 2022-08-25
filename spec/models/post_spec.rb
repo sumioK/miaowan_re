@@ -67,6 +67,7 @@ RSpec.describe Post, type: :model do
       expect(post.content).to eq "changed"
       expect(post.image).to eq "sample.jpg"
   end
+
   it "if update has image , image changes" do
     user = User.create(
       id: 1,
@@ -86,5 +87,22 @@ RSpec.describe Post, type: :model do
     )
     expect(post.content).to eq "changed"
     expect(post.image).to eq "change.jpg"
+  end
+
+  it "destroy method work" do
+    user = User.create(
+      id: 1,
+      name: "Jack",
+      email: "jack@example.com",
+      password: "password",
+      introduction: "test"
+    )
+    post = Post.new(
+      user_id: 1,
+      image: "sample.jpg",
+      content: "test"
+    )
+    post.destroy!
+    expect(user.posts).to_not include post
   end
 end
