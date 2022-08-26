@@ -38,15 +38,55 @@ RSpec.describe Comment, type: :model do
         content: "test"
       )
       comment = Comment.new(
-        comment: nil,
+        comment: "",
         user_id: 1,
         post_id: 1
       )
       expect(comment).to be_invalid
     end
 
-    it "can't updates without comment"
+    it "can updates with comment" do
+      user = User.create(
+        id: 1,
+        name: "Jack",
+        email: "jack@example.com",
+        password: "password",
+        introduction: "test"
+      )
+      post = Post.create(
+        user_id: 1,
+        image: "sample.jpg",
+        content: "test"
+      )
+      comment = Comment.new(
+        comment: "test comment",
+        user_id: 1,
+        post_id: 1
+      )
+      comment.update(
+        comment: "changed comment"
+      )
+    end
 
+    it "can't updates without comment" 
+      user = User.create(
+        id: 1,
+        name: "Jack",
+        email: "jack@example.com",
+        password: "password",
+        introduction: "test"
+      )
+      post = Post.create(
+        user_id: 1,
+        image: "sample.jpg",
+        content: "test"
+      )
+      comment = Comment.new(
+        comment: "test comment",
+        user_id: 1,
+        post_id: 1
+      )
+    end
   end
 
   describe "check method" do
