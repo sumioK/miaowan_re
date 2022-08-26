@@ -58,7 +58,7 @@ RSpec.describe Comment, type: :model do
         image: "sample.jpg",
         content: "test"
       )
-      comment = Comment.new(
+      comment = Comment.create(
         comment: "test comment",
         user_id: 1,
         post_id: 1
@@ -66,9 +66,10 @@ RSpec.describe Comment, type: :model do
       comment.update(
         comment: "changed comment"
       )
+      expect(comment).to be_valid
     end
 
-    it "can't updates without comment" 
+    it "can't updates without comment" do
       user = User.create(
         id: 1,
         name: "Jack",
@@ -81,11 +82,12 @@ RSpec.describe Comment, type: :model do
         image: "sample.jpg",
         content: "test"
       )
-      comment = Comment.new(
-        comment: "test comment",
+      comment = Comment.create(
+        comment: "",
         user_id: 1,
         post_id: 1
       )
+      expect(comment).to be_invalid
     end
   end
 
