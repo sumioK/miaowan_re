@@ -93,7 +93,26 @@ RSpec.describe Comment, type: :model do
 
   describe "check method" do
 
-    it "destroy works"
-
+    it "destroy works" do
+      user = User.create(
+        id: 1,
+        name: "Jack",
+        email: "jack@example.com",
+        password: "password",
+        introduction: "test"
+      )
+      post = Post.create(
+        user_id: 1,
+        image: "sample.jpg",
+        content: "test"
+      )
+      comment = Comment.create(
+        comment: "",
+        user_id: 1,
+        post_id: 1
+      )
+      comment.destroy
+      expect(user.comments).to_not include comment
+    end
   end
 end
