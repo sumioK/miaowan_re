@@ -5,9 +5,10 @@ RSpec.describe User, type: :model do
         it "is valid with a name ,email, password, password2" do
             user = User.new(
                 name: "Jack",
-                email: "jack@example.com",
+                email: "jhon@example.com",
                 password: "password"
             )
+            user.save
             expect(user).to be_valid
         end
 
