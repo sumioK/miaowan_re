@@ -12,7 +12,10 @@ RSpec.describe "Users", type: :request do
       expect(response).to have_http_status(200)
     end
 
-    it "can not access index without login"
+    it "can not access index without login" do
+      get users_index_path 
+      expect(response).to have_http_status(302)
+    end
 
     it "can not access show without login"
 
