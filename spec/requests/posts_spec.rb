@@ -31,13 +31,4 @@ RSpec.describe "Posts", type: :request do
       expect(response).to have_http_status(302)
     end
   end
-
-  describe "access posts with login" do
-      
-      it "access posts/new " do
-        get posts_new_path
-        expect(response).to have_http_status(200)
-      end
-
-  end
 end
