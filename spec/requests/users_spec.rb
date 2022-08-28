@@ -17,12 +17,24 @@ RSpec.describe "Users", type: :request do
       expect(response).to have_http_status(302)
     end
 
-    it "can not access show without login"
+    it "can not access show without login" do
+      get "/users/1"
+      expect(response).to have_http_status(302)
+    end
 
-    it "can not access edit without login"
+    it "can not access edit without login" do
+      get "/users/1/edit"
+      expect(response).to have_http_status(302)
+    end
 
-    it "can not access delete without login"
+    it "can not access delete without login" do
+      post "/users/1/delete"
+      expect(response).to have_http_status(302)
+    end
 
-    it "can not access logout without login"
+    it "can not access logout without login" do
+      post logout_path
+      expect(response).to have_http_status(302)
+    end
   end
 end
