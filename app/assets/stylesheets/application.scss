@@ -130,26 +130,26 @@
             margin-bottom: 10px;
         }
         .icon-and-name{
+            margin-left: 10px;
             display: flex;
-            height: 50px;
-            margin-left: 12.5%;
             a{  
                 align-items: center;
                 margin:0;
+                height: 32px;
             }
             img{
-                width: 50px;
-                height: 50px;
+                width: 32px;
+                height: 32px;
                 object-fit: cover;
                 align-items: center;
 
             }
             p{
-                font-size: 25px;
-                height: 25px;
+                font-size: 18px;
+                height: 32px;
                 margin:0;
-                padding-left: 25px;
-                margin-top: 10px;
+                padding-left: 10px;
+                padding-top: 3px;
             }
         }
         .posts-index{
@@ -158,12 +158,12 @@
             text-align: center;
             margin-left: 25%;
             margin-bottom: 30px;
-            padding: 20px;
             box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+            padding: 10px 0;
             .post-body{
                 img{
                     margin-top: 10px;
-                    width: 75%;
+                    width: 100%;
                 }
                 p{
                     text-align: left;
@@ -462,43 +462,6 @@
             .delete-btn{
                 text-align: center;
                 padding-bottom: 20px;
-            }
-        }
-        .js-post{
-            width:700px;
-            height: 400px;
-            position: absolute;
-            top: 50%;
-            left:50%;
-            transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            background-color: white;
-            display: none;
-            .post-container{
-                display: block;
-                p{
-                    text-align: center;
-                }
-                .post-picture{
-                    margin-left: 220px;
-                }
-                .post-body{
-                    margin-top: 20px;
-                    margin-left: 100px;
-                    width: 500px;
-                    height: 100px;
-                }
-                .post-submit{
-                    width: 100px;
-                    height: 30px;
-                    margin-left: 300px;
-                    margin-top: 20px;
-                }
-            }
-            button{
-                margin-left: 90%;
-                margin-top: 30px;
             }
         }
         .post-new{
