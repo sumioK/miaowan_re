@@ -211,6 +211,15 @@
             margin-left: 25%;
             padding: 20px;
             box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+            .icon-and-name-and-edit{
+                display: flex;
+                .edit-icon{
+                    margin-left: auto;
+                    a{
+                        text-decoration: none;
+                    }
+                }
+            }
             .post-body{
                 img{
                     margin-top: 10px;
@@ -219,6 +228,8 @@
                 p{
                     text-align: left;
                     margin-left: 12.5%;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
                 }
             }
         }
@@ -238,8 +249,54 @@
             }
         }
         .comments{
-            text-align: left;
-            margin-left: 12.5%;
+            .comments-containers{
+                margin-bottom: 10px;
+                .comments-container{
+                    text-align: left;
+                    margin-left: 12.5%;
+                    display: flex;
+                    a{
+                        width: 25px;
+                        height: 25px;
+                        margin-top: 5px;
+                        img{
+                            width: 25px;
+    
+                        }
+                    }
+                    p{
+                        margin-top: 5px;
+                        margin-left: 5px;
+                        margin-bottom: 5px;
+                    }
+                    .delete-btn{
+                        height: 22px;
+                        margin-top: 5px;
+                        margin-left: 5px;
+                        img{
+                            margin-top: 0;
+                            height: 22px;
+                            &:hover{
+                                opacity: 0.7;
+                            }
+                        }
+                    }
+                }
+            }  
+            .comments-form{
+                display: flex;
+                margin-left: 12.5%;
+                width: 100%;
+                .comment-input-container{
+                    width: 50%;
+                    .comment-input{
+                        width: 100%;
+                    }
+                }
+                .comment-submit-container{
+                    margin-left: 20px;
+                }
+            }
         }
         .show-titles{
             display: flex;
