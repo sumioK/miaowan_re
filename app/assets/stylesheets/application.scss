@@ -1,3 +1,4 @@
+// pcサイト
 @media screen and (min-width:900px){
     body{
         margin: 0;
@@ -59,15 +60,22 @@
             }
         }
         .flash{
-            background-color: #7afa6e;
-            text-align: center;
-        }
-        .alert{
-            background-color: rgb(255, 66, 66);
-            text-align: center;
-        }
-        .no-flash{
-            margin-top: 30px;
+            .success{
+                background-color: #7afa6e;
+                text-align: center;
+                height: 30px;
+            }
+            .alert{
+                background-color: rgb(255, 66, 66);
+                text-align: center;
+            }
+            .no-flash{
+                margin-top: 30px;
+            }
+            p{
+                margin:0; 
+                font-size: 20px;
+            }
         }
         .page-title{
             text-align: center;

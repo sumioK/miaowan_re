@@ -40,18 +40,20 @@
         </div>
       </div>
     </header>
-    <% if flash[:notice] %>
-      <div class="flash">
-          <%= flash[:notice] %>
-      </div>
-    <% elsif flash[:alert] %>
-      <div class="alert">
-        <%= flash[:alert] %>
-      </div>
-    <% else %>
-      <div class="no-flash">
-      </div>
-    <% end %>
+    <div class="flash">
+      <% if flash[:notice] %>
+        <div class="success">
+            <p><%= flash[:notice] %></p>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert">
+          <p><%= flash[:alert] %></p>
+        </div>
+      <% else %>
+        <div class="no-flash">
+        </div>
+      <% end %>
+    </div>
       <%= yield %>
   </body>
 </html>
