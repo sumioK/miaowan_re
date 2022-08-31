@@ -178,6 +178,31 @@
                     margin-left: 12.5%;
                 }
             }
+            .post-likes{
+                display: flex;
+                height: 25px;
+                padding: 10px;
+                a{
+                    height: 25px;
+                    img{
+                        width: 25px;
+                    }
+                }
+                p{
+                    margin: 0px 5px;
+                    height: 25px;
+                    font-size: 18px;
+                }
+                border-bottom: 1px solid rgb(233, 227, 227);
+            }
+            .post-content{
+                p{
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                    text-align: left;
+                    margin-left: 20px;
+                }
+            }
         }
         .posts-show{
             background-color: white;

@@ -14,5 +14,20 @@
             <div class="post-body">
                 <%= link_to image_tag("/post_images/#{post.image}") , "/posts/#{post.id}" %>
             </div>
+            <div class="post-likes">
+                <% if Like.find_by(user_id:@current_user.id , post_id: post.id) %>
+                    <%= link_to image_tag("like.png"),"/likes/#{post.id}/destroy" ,data: { turbo_method: :post} %>
+                    <p><%= post.likes.count %></p>
+                <% else %>
+                    <%= link_to image_tag("unlike.png"),"/likes/#{post.id}/create", data: { turbo_method: :post} %>
+                    <% if post.likes.count > 0 %>
+                        <p><%= post.likes.count %></p>
+                    <% end %>
+                <% end %>
+            </div>
+            <div class="post-content">
+                <p><%= post.content %></p>
+            </div>
+
         </div>
     <% end %>
