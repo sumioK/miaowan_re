@@ -2,7 +2,7 @@
 @media screen and (min-width:900px){
     body{
         margin: 0;
-        padding-top: 61px;
+        padding-top: 57px;
         background-color: #efefef;
         header{
             width: 100%;
@@ -53,6 +53,7 @@
                                 img{
                                     width: 30px;
                                     height: 30px;
+                                    object-fit: cover;
                                 }
                             }
                         }
