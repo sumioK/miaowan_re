@@ -475,8 +475,16 @@
                 .profiel-name{
                     text-align: center;
                     border-top: black 1px solid;
-                    border-bottom: black 1px solid
-                    ;
+                    border-bottom: black 1px solid;
+                }
+                .profiel-introduce{
+                    height:70px;
+                    p{
+                        height: 70px;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                        overflow: hidden;
+                    }
                 }
                 .profiel-follow{
                     margin-top: 8px;
