@@ -12,7 +12,7 @@
     </div>
     <div class="post-body">
         <img src="<%= "/post_images/#{@post.image}" %> ">
-        <p><%= @post.content%></p>
+        <p><%=safe_join(@post.content.split("\n"),tag(:br))%></p>
     </div>
     <div class="like">
     <% if Like.find_by(user_id: @current_user.id , post_id: @post.id)%>
