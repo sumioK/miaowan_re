@@ -24,12 +24,14 @@
 
 <div class="users-index">
     <% @users.each do |user| %>
-        <div class= "prof-img">
-            <%= link_to image_tag("/user_images/#{user.profiel_image}"), "/users/#{user.id}" %>
-        </div>
-        <div class="prof-sentence">
-            <%= user.name %>
-            <%= user.introduction %>
+        <div class="user-cont">
+            <div class= "user-img">
+                <%= link_to image_tag("/user_images/#{user.profiel_image}"), "/users/#{user.id}" %>
+            </div>
+            <div class="prof-sentence">
+                <h4 class="user-name"><%= user.name %></h4>
+                <p class="user-introduction"><%= user.introduction %></p>
+            </div>
         </div>
     <% end%>
 </div>

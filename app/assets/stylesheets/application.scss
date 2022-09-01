@@ -494,16 +494,41 @@
         .users-index{
             width: 50%;
             margin: 0 auto;
-            .prof-img{
-                img{
-                    width: 48px;
-                    heigh:48px;
-                    object-fit: cover;
+            background-color: white;
+            .user-cont{
+                display: flex;
+                &:hover{
+                    background-color: rgb(202, 202, 202);
+                    opacity: 0.7;
+                    cursor: pointer;
+                }
+                .user-img{
+                    img{
+                        width: 48px;
+                        height:48px;
+                        object-fit: cover;
+                    }
+                }
+                .prof-sentence{
+                    .user-name{
+                        font-size: 15px;
+                        margin-top: 0;
+                        margin-bottom: 0;
+                    }
+                    .user-introduction{
+                        font-size: 15px;
+                        margin-top: 0;
+                        margin-bottom: 0;
+
+                    }
                 }
             }
         }
         .profiel-edit{
             box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+            width:900px;
+            margin: 20px auto;
+            background-color: white;
             .title-container{
                 display: flex;
                 justify-content: center;
@@ -519,9 +544,6 @@
                     }
                 }
             }
-            width:900px;
-            margin: 20px auto;
-            background-color: white;
             .profiel-container{
                 display: flex;
                 .edit-left{
