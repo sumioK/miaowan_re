@@ -367,6 +367,7 @@
         .show-profiel{
             width: 50%;
             margin:0 auto;
+            margin-top: 30px;
             display: flex;
             .show-profiel-image{
                 img{
@@ -411,7 +412,12 @@
                             opacity: 0.5;
                         }
                     }
-                }          
+                } 
+                .user-introduction{
+                    font-size: 15px;
+                    height: 92px;
+                    overflow: hidden;
+                }
             }
         }
         .follow-unfollow{
