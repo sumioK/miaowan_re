@@ -72,9 +72,6 @@
                 background-color: rgb(255, 66, 66);
                 text-align: center;
             }
-            .no-flash{
-                margin-top: 30px;
-            }
             p{
                 margin:0; 
                 font-size: 20px;
@@ -492,38 +489,70 @@
                 }
             }
         }
+        .user-serch-form{
+            border: 1px solid rgb(239, 243, 244);
+            .serch-form{
+                text-align: center;
+                .serch-indent{
+                    width: 35%;
+                    height: 25px;
+                    border:black solid 2px;
+                }
+                .submit-btn{
+                    display: inline;
+                    height: 27px;
+                    margin-left: 5px;
+                    border: none;
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                    }
+                margin-bottom: 10px;
+            }
+        }
         .users-index{
             width: 50%;
             margin: 0 auto;
             background-color: white;
-            .user-cont{
-                display: flex;
-                &:hover{
-                    background-color: rgb(235, 235, 235);
-                    opacity: 0.7;
-                    cursor: pointer;
-                }
-                .user-img{
-                    img{
-                        width: 48px;
-                        height:48px;
-                        object-fit: cover;
+            a{
+                text-decoration: none;
+                color: black;
+                .user-cont{
+                    display: flex;
+                    padding: 16px 12px;
+                    border-left: 1px solid rgb(239, 243, 244);
+                    border-right: 1px solid rgb(239, 243, 244);
+                    &:hover{
+                        background-color: rgb(235, 235, 235);
+                        opacity: 0.7;
+                        cursor: pointer;
                     }
-                }
-                .prof-sentence{
-                    .user-name{
-                        font-size: 15px;
-                        margin-top: 0;
-                        margin-bottom: 0;
+                    .user-img{
+                        img{
+                            width: 48px;
+                            height:48px;
+                            object-fit: cover;
+                        }
                     }
-                    .user-introduction{
-                        font-size: 15px;
-                        margin-top: 0;
-                        margin-bottom: 0;
-
+                    .prof-sentence{
+                        .user-name{
+                            font-size: 15px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                        }
+                        .user-introduction{
+                            font-size: 15px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+    
+                        }
                     }
                 }
             }
+            
         }
         .profiel-edit{
             box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
