@@ -1,5 +1,5 @@
 // pcサイト
-@media screen and (min-width:100px){
+@media screen and (min-width:900px){
     body{
         margin: 0;
         padding-top: 57px;
@@ -725,7 +725,7 @@
     }
 }
 // タブレット端末
-@media screen and (min-width:100px){
+@media screen and (max-width:900px) and (min-width:321px){
     body{
         margin: 0;
         padding-top: 57px;
