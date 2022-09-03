@@ -7,7 +7,6 @@
         <% end %>
     </div>
 </div>
-
 <div class="users-index">
     <% @users.each do |user| %>
         <%= link_to "/users/#{user.id}" do %>
@@ -17,7 +16,7 @@
                 </div>
                 <div class="prof-sentence">
                     <h4 class="user-name"><%= user.name %></h4>
-                    <p class="user-introduction"><%= user.introduction %></p>
+                    <p class="user-introduction"><%= safe_join(user.introduction.to_s.split("\n"),tag(:br)) %></p>
                 </div>
             </div>
         <% end %>

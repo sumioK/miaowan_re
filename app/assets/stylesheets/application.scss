@@ -472,7 +472,6 @@
         }
         .profiel-index{
             width: 75%;
-            display: none;
             flex-wrap: wrap;
             margin: 50px auto;
             .profiel-card{
@@ -564,6 +563,8 @@
                             margin-bottom: 0;
                         }
                         .user-introduction{
+                            height: 90px;
+                            overflow: hidden;
                             font-size: 15px;
                             margin-top: 0;
                             margin-bottom: 0;
