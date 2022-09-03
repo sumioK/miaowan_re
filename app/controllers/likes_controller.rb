@@ -19,4 +19,7 @@ class LikesController < ApplicationController
         redirect_back(fallback_location: "/")
     end
 
+    def index
+    end
+
 end
