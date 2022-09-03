@@ -1,25 +1,19 @@
 <div class="home-container">
     <h1 class='home-sen'>ようこそMiaoWanへ</h1>
-    <h2 class="home-sen-sub">ペットの写真をみんなに自慢しよう!!</h2>
+    <h2 class="home-sen-sub">自慢のペットをみんなで共有しよう!!</h2>
+    <% if @current_user %>
+    <% else %>
+        <div class="home-login-button">
+            <%= link_to "/login" do %>
+                <P>ログイン</p>
+            <% end %>
+        </div>
+        <br>
+        <div class="home-login-button">
+            <%= link_to "/signup" do %>
+                <P>新規登録</p>
+            <% end %>
+        </div>             
+    <% end %>
 </div>
 
-<% if @current_user %>
-<% else %>
-    <div class="home-login-button">
-        <%= link_to "/login" do %>
-            <P>ログイン</p>
-        <% end %>
-    </div>
-    <br>
-    <div class="home-login-button">
-        <%= link_to "/signup" do %>
-            <P>新規登録</p>
-        <% end %>
-    </div>             
-<% end %>
-<%# <p>jQuery稼働テスト</p>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $("p").text("jQuery稼働テスト(稼働中)");
-    });
-</script> %>
