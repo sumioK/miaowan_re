@@ -17,6 +17,7 @@
                 <input name="email" value="<%= @user.email %>" class="user-email">
                 <br>
                 <textarea name="introduction" class="user-body"><%= @user.introduction %></textarea>
+                <br>
                 <input name="profiel_image" type="file" class="user-picture" id="user-img">
                 <div id="edit-image" class="img-cont"><img class="user-img" src="/user_images/<%= @user.profiel_image %>"></div>
             </div>
