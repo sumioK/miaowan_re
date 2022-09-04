@@ -1,22 +1,16 @@
 <div class="show-profiel">
-    <div class="show-profiel-image">
-        <img src="<%= "/user_images/#{@user.profiel_image}"%>">
-    </div>
-    <div class="show-profiel-right">
-        <div class="right-name-and-edit">
-            <p class="right-name"><%= @user.name %></p>
-            <% if @user == @current_user %>
+    <div class="show-profiel-line">
+        <div class="show-profiel-image">
+            <img src="<%= "/user_images/#{@user.profiel_image}"%>">
+        </div>
+        <% if @user == @current_user %>
+            <div class="setting-image">
                 <%= link_to image_tag("setting.png"),"/users/#{@user.id}/edit" %>
+            </div>
+            <div class="logout-button">
                 <%= link_to image_tag("logout.png") , "/logout" , data: { turbo_method: :post }%>
-            <% end %>
-        </div>
-        <div class="right-seconds">
-            <p class="post-count"><%= "投稿#{@posts.length}件" %></p>
-            <%= link_to "フォロー#{@user.followings.count}人", followings_user_path(@user) %>
-            <%= link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
-        </div>
-        <p class="user-introduction"><%= safe_join(@user.introduction.to_s.split("\n"),tag(:br)) %></p>
-        
+            </div>
+        <% end %>
         <% if @user != @current_user %>
             <div class="follow-unfollow">
                 <% if @user.is_followed_by?(@current_user) %>
@@ -27,7 +21,15 @@
             </div>
         <% end %>
     </div>
+    <h3 class="profiel-name"><%= @user.name %></h3>
+    <p class="user-introduction"><%= safe_join(@user.introduction.to_s.split("\n"),tag(:br)) %></p>
+    <div class="profiel-under-container">
+        <p class="post-count"><%= "投稿#{@posts.length}件" %></p>
+        <%= link_to "フォロー#{@user.followings.count}人", followings_user_path(@user) %>
+        <%= link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %>
+    </div>
 </div>
+
 <div class="tab" id="js-tab">
     <div class="show-titles">
         <h2 class="show-tab-title is-active" data-nav="0">Posts</h2>
