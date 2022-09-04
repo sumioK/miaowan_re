@@ -1409,11 +1409,14 @@
             }
         }
         .post-new{
-            width:700px;
+            width:90%;
             margin:0 auto;
-            margin-top: 30px;
+            margin-top: 15px;
             background-color: white;
             box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+            .page-title{
+                padding-top: 10px;
+            }
             .title-container{
                 display: flex;
                 justify-content: center;
@@ -1432,25 +1435,26 @@
             }
             .post-container{
                 display: block;
-                margin-top: 20px;
+                margin-top: 10px;
                 p{
                     text-align: center;
                 }
                 .post-picture{
-                    margin-left: 220px;
+                    text-align: center;
                 }
                 .post-body{
                     margin-top: 20px;
-                    margin-left: 100px;
-                    width: 500px;
+                    width: 90%;
+                    margin: 20px auto;
                     height: 100px;
                 }
-                .post-submit{
-                    width: 100px;
-                    height: 30px;
-                    margin-left: 300px;
-                    margin-top: 20px;
-                    margin-bottom: 20px;
+                .post-submit-container{
+                    width: 100%;
+                    .post-submit{
+                        width: 100px;
+                        height: 30px;
+                        margin: 20px auto;
+                    }
                 }
                 #new-image{
                     .new-img{
