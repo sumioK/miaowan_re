@@ -820,7 +820,7 @@
         .home-container{
             color: white;
             text-align: center;
-            background-image: url("home1.jpg");
+            background-image: url("home2.jpg");
             background-size: cover;
             background-repeat: no-repeat;
             width: 100%;
@@ -1090,28 +1090,31 @@
         }
         .login-form{
             background-color: white;
-            width:40%;
-            margin:100px auto;
+            width:90%;
+            margin:20px auto;
             box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
             .login-logo{
                 text-align: center;
-                padding-top: 25px;
-                font-size: 30px;
+                padding-top: 15px;
+                font-size: 20px;
             }
             .form-body{
                 width: 100%;
                 .login-input{
                     text-align: center;
+                    .form-label{
+                        font-size: 15px;
+                    }
                     .form-input{
                         width: 50%;
                         background-color: rgb(219, 216, 216);
-                        height: 25px;
+                        height: 20px;
                     }
                     .form-submit{
-                        margin-top: 50px;
+                        margin-top: 30px;
                         margin-bottom: 50px;
-                        width: 200px;
-                        height: 50px;
+                        width: 100px;
+                        height: 30px;
                     }
                 }
             }
