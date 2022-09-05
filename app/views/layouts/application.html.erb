@@ -34,7 +34,7 @@
           <% else%>
             <li><%= link_to image_tag("dog&cat.png"),"/users/index"%></li>
             <li><%= link_to image_tag("/user_images/#{@current_user.profiel_image}") , "/users/#{@current_user.id}" , data: {"turbolinks" => false} %></li>
-            <li><%= link_to image_tag("post.png") , "/posts/new" %></li>
+            <li><%= link_to image_tag("post.png") , "/posts/new", data: {"turbolinks" => false}%></li>
           <% end%>
           </ul>
         </div>
