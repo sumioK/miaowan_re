@@ -19,9 +19,9 @@
                 <textarea name="introduction" class="user-body"><%= @user.introduction %></textarea>
                 <br>
                 <input name="profiel_image" type="file" class="user-picture" id="user-img">
-                <div id="edit-image" class="img-cont"><img class="user-img" src="/user_images/<%= @user.profiel_image %>"></div>
             </div>
         </div>
+        <div id="edit-image" class="img-cont"><img class="user-img" src="/user_images/<%= @user.profiel_image %>"></div>
         <br>
         <div class="submit-container">
             <input type="submit" value="更新" class="user-submit">
