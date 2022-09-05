@@ -650,14 +650,14 @@
                     .user-picture{
                         margin-left: 20px;
                     }
-                    .img-cont{
-                        margin: 0;
-                        .user-img{
-                            display: block;
-                            width: 200px;
-                            margin:20px 20px;
-                        }
-                    }
+                }
+            }
+            .img-cont{
+                margin: 0;
+                .user-img{
+                    display: block;
+                    width: 200px;
+                    margin:20px auto;
                 }
             }
             .submit-container{  
@@ -1355,7 +1355,7 @@
             .profiel-container{
                 display: flex;
                 margin: 0 auto;
-                width: 700px;
+                width: 300px;
                 .edit-left{
                     p{
                         font-size: 12px;
@@ -1371,21 +1371,21 @@
                     .user-name{
                         margin:10px 5px;
                         height: 12px;
-                        width: 200px;
+                        width: 180px;
                     }
                     .user-email{
                         margin:0px 5px;
                         height: 12px;
-                        width: 200px;
+                        width: 180px;
                     }
                     .user-body{
-                        margin:16px 5px;
+                        margin:14px 5px;
                         height: 100px;
-                        width: 200px;
+                        width: 180px;
                     }
                     .user-picture{
                         margin-left: 5px;
-                        font-size: 12px;
+                        font-size: 11px;
                     }
                 }
             }
@@ -1395,6 +1395,18 @@
                     display: block;
                     width: 100px;
                     margin:10px auto;
+                }
+            }
+            #edit-image{
+                text-align: center;
+                .edit-img{
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    margin:10px auto;
+                }
+                .edit-img:nth-child(1){
+                    display: none;
                 }
             }
             .submit-container{  

@@ -36,7 +36,7 @@ if (document.URL.match(/new/)){
     });
 }
 
-if (document.URL.match(/edit/)){
+if (document.URL.match(/edit/) && document.URL.match(/posts/)){
     document.addEventListener('DOMContentLoaded', () => {
         const createImageHTML = (blob) => {
         const imageElement = document.getElementById('new-image');
@@ -60,6 +60,29 @@ if (document.URL.match(/edit/)){
     });
 }
 
+if (document.URL.match(/edit/) && document.URL.match(/users/)){
+    document.addEventListener('DOMContentLoaded', () => {
+        const createImageHTML = (blob) => {
+        const imageElement = document.getElementById('edit-image');
+        const blobImage = document.createElement('img');
+        blobImage.setAttribute('class', 'edit-img')
+        blobImage.setAttribute('src', blob);
+
+        imageElement.appendChild(blobImage);
+        };
+
+        document.getElementById('user-img').addEventListener('change', (e) => {
+        const imageContent = document.querySelector('.edit-img');
+        if (imageContent){
+            imageContent.remove();
+        }
+
+        const file = e.target.files[0];
+        const blob = window.URL.createObjectURL(file);
+        createImageHTML(blob);
+        });
+    });
+}
 
 if (document.URL.match(/users/)){
     (()=>{
