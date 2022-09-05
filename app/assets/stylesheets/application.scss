@@ -660,6 +660,18 @@
                     margin:20px auto;
                 }
             }
+            #edit-image{
+                text-align: center;
+                .edit-img{
+                    width: 200px;
+                    height: 200px;
+                    object-fit: cover;
+                    margin:10px auto;
+                }
+                .edit-img:nth-child(2){
+                    display: none;
+                }
+            }
             .submit-container{  
                 text-align: center;
                 padding-bottom: 20px;
@@ -1391,7 +1403,7 @@
             }
             .img-cont{
                 margin: 0;
-                .user-img{
+                .edit-img{
                     display: block;
                     width: 100px;
                     margin:10px auto;
@@ -1405,7 +1417,7 @@
                     object-fit: cover;
                     margin:10px auto;
                 }
-                .edit-img:nth-child(1){
+                .edit-img:nth-child(2){
                     display: none;
                 }
             }
