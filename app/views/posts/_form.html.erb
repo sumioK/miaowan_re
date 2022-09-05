@@ -1,9 +1,13 @@
 <div class="post-container">
         <%= form_tag("/posts/create",{multipart:true}) do %>
-            <input name="image" type="file" class="post-picture" id="post-img">
+            <div class="post-image-container">
+                <input name="image" type="file" class="post-image" id="post-img">
+            </div>
             <br>
             <div id="new-image"></div> 
-            <textarea name="content" class="post-body"></textarea>
+            <div class="post-body-container">
+                <textarea name="content" class="post-body"></textarea>
+            </div>
             <br>
             <div class="post-submit-container">
                 <input type="submit" value="投稿" class="post-submit">

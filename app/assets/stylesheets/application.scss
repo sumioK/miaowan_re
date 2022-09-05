@@ -1439,17 +1439,24 @@
                 p{
                     text-align: center;
                 }
-                .post-picture{
+                .post-image-container{
                     text-align: center;
+                    .post-image{
+                        text-align: center;
+                    }
                 }
-                .post-body{
-                    margin-top: 20px;
-                    width: 90%;
-                    margin: 20px auto;
-                    height: 100px;
+                .post-body-container{
+                    text-align: center;
+                    .post-body{
+                        margin-top: 20px;
+                        width: 90%;
+                        margin: 20px auto;
+                        height: 100px;
+                    }    
                 }
                 .post-submit-container{
                     width: 100%;
+                    text-align: center;
                     .post-submit{
                         width: 100px;
                         height: 30px;
