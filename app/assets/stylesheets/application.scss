@@ -716,7 +716,7 @@
                 p{
                     text-align: center;
                 }
-                .post-picture{
+                .post-image{
                     margin-left: 220px;
                 }
                 .post-body{
@@ -1454,15 +1454,15 @@
                 display: flex;
                 justify-content: center;
                 .page-title{
+                    font-size: 20px;
                     margin-left: 50px;
-                    padding-top: 30px;
                 }
                 .delete-btn{
-                    margin-top: 30px;
                     margin-left: 10px;
+                    margin-top: 18px;
                     height: 40px;
                     img{
-                        height: 40px;
+                        height: 20px;
                     }
                 }
             }
@@ -1483,7 +1483,8 @@
                     .post-body{
                         margin-top: 20px;
                         width: 90%;
-                        margin: 20px auto;
+                        margin: 0 auto;
+                        margin-top: 5px;
                         height: 100px;
                     }    
                 }
@@ -1493,14 +1494,14 @@
                     .post-submit{
                         width: 100px;
                         height: 30px;
-                        margin: 20px auto;
+                        margin: 0 auto;margin-bottom: 5px;
                     }
                 }
                 #new-image{
                     .new-img{
-                        width: 400px;
+                        width: 100%;
+                        margin: 0 auto;
                         margin-top: 30px;
-                        margin-left: 150px;
                     }
                     .new-img:nth-child(2){
                         display: none;

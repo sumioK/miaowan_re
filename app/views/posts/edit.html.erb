@@ -5,11 +5,17 @@
     </div>
     <div class="post-container">
         <%= form_tag("/posts/#{@post.id}/update" , {multipart:true}) do %>
-            <input type="file" name="image"  class="post-picture" id="post-img">
+            <div class="post-image-container">
+                <input type="file" name="image"  class="post-image" id="post-img">
+            </div>
             <div id="new-image"><img class="new-img" src="/post_images/<%= @post.image %>"></div>
-            <textarea name="content" class="post-body"><%= @post.content %></textarea>
+            <div class="post-body-container">
+                <textarea name="content" class="post-body"><%= @post.content %></textarea>
+            </div>
             <br>
-            <input type="submit" value="更新" class="post-submit">
+            <div class="post-submit-container">
+                <input type="submit" value="更新" class="post-submit">
+            </div>
         <% end %>
     </div>    
 </div>
