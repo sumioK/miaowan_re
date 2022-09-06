@@ -195,8 +195,8 @@
                 text-align: center;
                 margin-left: 25%;
                 margin-top: 10px;
-                border: 2px solid #e9e3e3;
                 padding: 10px 0;
+                border: 2px solid #e9e3e3;
                 border-radius: 10px;
                 .post-body{
                     img{
@@ -243,7 +243,8 @@
             margin-left: 25%;
             margin-top: 30px;
             padding: 20px;
-            box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+            border: 2px solid #e9e3e3;
+            border-radius: 10px;
             .icon-and-name-and-edit{
                 display: flex;
                 .edit-icon{
@@ -373,11 +374,13 @@
             background-color: white;
             width:40%;
             margin:100px auto;
-            box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+            border: 2px solid #e9e3e3;
+            border-radius: 10px;
             .login-logo{
                 text-align: center;
                 padding-top: 25px;
-                font-size: 30px;
+                font-size: 24px;
+                font-weight: 100;
             }
             .form-body{
                 width: 100%;
@@ -540,7 +543,7 @@
                 .serch-indent{
                     width: 35%;
                     height: 25px;
-                    border:black solid 2px;
+                    border:black solid 1px;
                 }
                 .submit-btn{
                     display: inline;
@@ -603,10 +606,11 @@
             
         }
         .profiel-edit{
-            box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
             width:80%;
             margin: 20px auto;
             background-color: white;
+            border: 2px solid #e9e3e3;
+            border-radius: 10px;
             .title-container{
                 display: flex;
                 justify-content: center;
@@ -695,7 +699,8 @@
             margin:0 auto;
             margin-top: 30px;
             background-color: white;
-            box-shadow:  0 10px 25px 0 rgba(0, 0, 0, .5);
+            border: 2px solid #e9e3e3;
+            border-radius: 10px;
             .title-container{
                 display: flex;
                 justify-content: center;
@@ -720,9 +725,6 @@
                 }
                 p{
                     text-align: center;
-                }
-                .post-image{
-                    margin-left: 220px;
                 }
                 .post-body{
                     margin-top: 20px;
@@ -889,7 +891,7 @@
             .serch-indent{
                 width: 35%;
                 height: 18px;
-                border:black solid 2px;
+                border:black solid 1px;
             }
             .submit-btn{
                 display: inline;
@@ -1299,7 +1301,7 @@
                 .serch-indent{
                     width: 35%;
                     height: 18px;
-                    border:black solid 2px;
+                    border:black solid 1px;
                 }
                 .submit-btn{
                     display: inline;
