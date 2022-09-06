@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MiaowanRe</title>
+    <title>PISO</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -20,9 +20,9 @@
       <div class="header-container">
         <div class="header-logo">
             <% if @current_user %>
-              <h2><%= link_to "MiaoWan" , "/posts/index" %></h2>
+              <h2><%= link_to "PISO" , "/posts/index" %></h2>
             <% else %>
-              <h2><%= link_to "MiaoWan" , "/" %></h2>
+              <h2><%= link_to "PISO" , "/" %></h2>
             <% end %>
         </div>
         <div class="header-icons">
@@ -34,7 +34,7 @@
           <% else%>
             <li><%= link_to image_tag("dog&cat.png"),"/users/index"%></li>
             <li><%= link_to image_tag("/user_images/#{@current_user.profiel_image}") , "/users/#{@current_user.id}" , data: {"turbolinks" => false} %></li>
-            <li><%= link_to image_tag("post.png") , "/posts/new", data: {"turbolinks" => false}%></li>
+            <li><%= link_to image_tag("post.png") , "/posts/new" , data: {"turbolinks" => false}%></li>
           <% end%>
           </ul>
         </div>
