@@ -2,5 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "./custom/users_show.js"
+import "./custom/prview.js"
+
 //= require jquery
 //= require jquery_ujs
