@@ -62,7 +62,7 @@
         }
         .flash{
             .success{
-                background-color: #7afa6e;
+                background-color: #a1fcfc;
                 width: 100%;
                 text-align: center;
                 height: 30px;
@@ -70,8 +70,10 @@
             }
             .alert{
                 position: fixed;
-                background-color: rgb(255, 66, 66);
+                background-color: rgb(252, 138, 138);
                 text-align: center;
+                height: 30px;
+                width: 100%;
             }
             p{
                 margin:0; 
@@ -816,7 +818,7 @@
         }
         .flash{
             .success{
-                background-color: #7afa6e;
+                background-color: #a9fca1;
                 width: 100%;
                 text-align: center;
                 height: 20px;
